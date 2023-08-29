@@ -114,11 +114,34 @@ echo form_close();
       <!-- /.social-auth-links -->
 
       <p class="mb-1">
-        <a href="forgot-password.html">Verificar contraseña</a>
+        <a href="forgot-password.html">Recuperar contraseña</a>
       </p>
+      <form id="changePasswordForm" style="display:none;" action="change-password.php" method="post">
+    <label for="currentPassword">Contraseña actual:</label>
+    <input type="password" id="currentPassword" name="currentPassword" required><br>
+
+    <label for="newPassword">Nueva contraseña:</label>
+    <input type="password" id="newPassword" name="newPassword" required><br>
+
+    <label for="confirmPassword">Confirmar contraseña:</label>
+    <input type="password" id="confirmPassword" name="confirmPassword" required><br>
+
+    <button type="submit" name="changePassword">Cambiar contraseña</button>
+  </form>
+
+  <script>
+    const showPasswordFormLink = document.getElementById('showPasswordForm');
+    const changePasswordForm = document.getElementById('changePasswordForm');
+
+    showPasswordFormLink.addEventListener('click', function(event) {
+      event.preventDefault();
+      changePasswordForm.style.display = 'block';
+    });
+  </script>
       <p class="mb-0">
         <a href="register.html" class="text-center">Registrar nuevo usuario</a>
       </p>
+      
     </div>
     <!-- /.login-card-body -->
   </div>
