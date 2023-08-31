@@ -113,9 +113,13 @@ echo form_close();
       </div>
       <!-- /.social-auth-links -->
 
-      <p class="mb-1">
+      <!-- <p class="mb-1">
         <a href="forgot-password.html">Recuperar contraseña</a>
-      </p>
+      </p> -->
+      <p class="mb-1">
+  <a href="#" id="showPasswordForm">Recuperar/ Cambiar contraseña</a>
+</p>
+
       <form id="changePasswordForm" style="display:none;" action="change-password.php" method="post">
     <label for="currentPassword">Contraseña actual:</label>
     <input type="password" id="currentPassword" name="currentPassword" required><br>
