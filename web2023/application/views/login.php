@@ -161,19 +161,52 @@ echo form_close();
 
   <label for="confirmPassword">Confirmar contraseña:</label>
   <input type="password" id="confirmPassword" name="confirmPassword" required><br>
-
+  <span id="passwordMismatch" style="color: red; display: none;">Las contraseñas no coinciden.</span>
   <!-- Otros campos del formulario de registro aquí -->
 
   <button type="submit" name="registerUser">Registrar usuario</button>
 </form>
 
-<script>
+<!-- <script>
   const showRegisterFormLink = document.getElementById('showRegisterForm');
   const registerForm = document.getElementById('registerForm');
 
   showRegisterFormLink.addEventListener('click', function(event) {
     event.preventDefault();
     registerForm.style.display = 'block';
+  });
+</script> -->
+<script>
+  const showRegisterFormLink = document.getElementById('showRegisterForm');
+  const registerForm = document.getElementById('registerForm');
+  const notificationMessage = document.getElementById('notificationMessage');
+  const newPasswordInput = document.getElementById('newPassword');
+  const confirmPasswordInput = document.getElementById('confirmPassword');
+  const passwordMismatch = document.getElementById('passwordMismatch');
+
+  showRegisterFormLink.addEventListener('click', function(event) {
+    event.preventDefault();
+    registerForm.style.display = 'block';
+    notificationMessage.style.display = 'none';
+  });
+
+  confirmPasswordInput.addEventListener('input', function() {
+    if (newPasswordInput.value !== confirmPasswordInput.value) {
+      passwordMismatch.style.display = 'block';
+    } else {
+      passwordMismatch.style.display = 'none';
+    }
+  });
+
+  registerForm.addEventListener('submit', function(event) {
+    if (newPasswordInput.value !== confirmPasswordInput.value) {
+      event.preventDefault();
+      passwordMismatch.style.display = 'block';
+    } else {
+      passwordMismatch.style.display = 'none';
+      notificationMessage.style.display = 'block';
+      registerForm.style.display = 'none';
+    }
   });
 </script>
 
