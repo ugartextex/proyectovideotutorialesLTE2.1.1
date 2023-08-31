@@ -113,9 +113,13 @@ echo form_close();
       </div>
       <!-- /.social-auth-links -->
 
-      <p class="mb-1">
+      <!-- <p class="mb-1">
         <a href="forgot-password.html">Recuperar contraseña</a>
-      </p>
+      </p> -->
+      <p class="mb-1">
+  <a href="#" id="showPasswordForm">Recuperar/ Cambiar contraseña</a>
+</p>
+
       <form id="changePasswordForm" style="display:none;" action="change-password.php" method="post">
     <label for="currentPassword">Contraseña actual:</label>
     <input type="password" id="currentPassword" name="currentPassword" required><br>
@@ -138,19 +142,25 @@ echo form_close();
       changePasswordForm.style.display = 'block';
     });
   </script>
-      <p class="mb-0">
+      <!-- <p class="mb-0">
         <a href="register.html" class="text-center">Registrar nuevo usuario</a>
-      </p>
-<p class="mb-1">
+      </p> -->
+      <p class="mb-1">
   <a href="#" id="showRegisterForm">Registrar nuevo usuario</a>
 </p>
-      <!-- Formulario de registro -->
+<!-- Formulario de registro -->
 <form id="registerForm" style="display:none;" action="ruta-al-controlador-de-registro" method="post">
   <label for="newUsername">Nuevo nombre de usuario:</label>
   <input type="text" id="newUsername" name="newUsername" required><br>
 
+  <label for="newEmail">Correo electrónico:</label>
+  <input type="email" id="newEmail" name="newEmail" required><br>
+
   <label for="newPassword">Nueva contraseña:</label>
   <input type="password" id="newPassword" name="newPassword" required><br>
+
+  <label for="confirmPassword">Confirmar contraseña:</label>
+  <input type="password" id="confirmPassword" name="confirmPassword" required><br>
 
   <!-- Otros campos del formulario de registro aquí -->
 
@@ -168,6 +178,7 @@ echo form_close();
 </script>
 
 <!-- ... Resto del código HTML ... -->
+      
     </div>
     <!-- /.login-card-body -->
   </div>
@@ -180,5 +191,7 @@ echo form_close();
 <script src="<?php echo base_url(); ?>adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="<?php echo base_url(); ?>/adminlte/dist/js/adminlte.min.js"></script>
+
 </body>
+
 </html>
