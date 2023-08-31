@@ -141,7 +141,33 @@ echo form_close();
       <p class="mb-0">
         <a href="register.html" class="text-center">Registrar nuevo usuario</a>
       </p>
-      
+<p class="mb-1">
+  <a href="#" id="showRegisterForm">Registrar nuevo usuario</a>
+</p>
+      <!-- Formulario de registro -->
+<form id="registerForm" style="display:none;" action="ruta-al-controlador-de-registro" method="post">
+  <label for="newUsername">Nuevo nombre de usuario:</label>
+  <input type="text" id="newUsername" name="newUsername" required><br>
+
+  <label for="newPassword">Nueva contraseña:</label>
+  <input type="password" id="newPassword" name="newPassword" required><br>
+
+  <!-- Otros campos del formulario de registro aquí -->
+
+  <button type="submit" name="registerUser">Registrar usuario</button>
+</form>
+
+<script>
+  const showRegisterFormLink = document.getElementById('showRegisterForm');
+  const registerForm = document.getElementById('registerForm');
+
+  showRegisterFormLink.addEventListener('click', function(event) {
+    event.preventDefault();
+    registerForm.style.display = 'block';
+  });
+</script>
+
+<!-- ... Resto del código HTML ... -->
     </div>
     <!-- /.login-card-body -->
   </div>
