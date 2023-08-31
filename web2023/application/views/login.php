@@ -142,9 +142,13 @@ echo form_close();
       changePasswordForm.style.display = 'block';
     });
   </script>
-      <p class="mb-0">
+      <!-- <p class="mb-0">
         <a href="register.html" class="text-center">Registrar nuevo usuario</a>
-      </p>
+      </p> -->
+      <p class="mb-1">
+  <a href="#" id="showRegisterForm">Registrar nuevo usuario</a>
+</p>
+
       
     </div>
     <!-- /.login-card-body -->
@@ -158,5 +162,16 @@ echo form_close();
 <script src="<?php echo base_url(); ?>adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="<?php echo base_url(); ?>/adminlte/dist/js/adminlte.min.js"></script>
+<script>
+    const showRegisterFormLink = document.getElementById('showRegisterForm');
+    const registerForm = document.getElementById('registerForm');
+
+    showRegisterFormLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        registerForm.style.display = 'block';
+    });
+</script>
+
 </body>
+
 </html>
